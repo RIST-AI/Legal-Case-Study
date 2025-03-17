@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIST Legal & Insurance Management Simulation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/RIST - Primary Colour.jpg" alt="RIST Logo" class="logo">
+        </div>
+        <h1>Legal & Insurance Management Simulation</h1>
+    </header>
+
+    <main>
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        
+        <div id="progress-steps">
+            <div class="step active" data-step="introduction">Introduction</div>
+            <div class="step" data-step="document-review">Document Review</div>
+            <div class="step" data-step="january">January</div>
+            <div class="step" data-step="february">February</div>
+            <div class="step" data-step="march">March</div>
+            <div class="step" data-step="april">April</div>
+            <div class="step" data-step="may">May</div>
+            <div class="step" data-step="june">June</div>
+            <div class="step" data-step="summary">Summary</div>
+        </div>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="section active">
+            <div class="section-content">
+                <h2>Welcome to the XYZ Farms Case Study</h2>
+                <p>In this simulation, you will take on the role of a compliance consultant for XYZ Farms, a growing agricultural business. Your task is to review their financial reports, legal documents, and insurance policies to ensure they are meeting all legal requirements and managing risks properly.</p>
+                
+                <div class="scenario-box">
+                    <h3>Scenario</h3>
+                    <p>XYZ Farms grows vegetables and raises some livestock. They recently expanded their operations and hired several new employees. The managing partners have asked you to help them stay on top of all their legal and insurance requirements for the next six months.</p>
+                    <p>Your job will be to:</p>
+                    <ul>
+                        <li>Look at financial statements and legal documents</li>
+                        <li>Make sure they follow all the rules and laws</li>
+                        <li>Check that their insurance covers everything it should</li>
+                        <li>Help them fix any problems you find</li>
+                    </ul>
+                </div>
+                
+                <div class="instructions-box">
+                    <h3>How to Use This Simulation</h3>
+                    <p>This simulation covers a six-month period from January to June 2024. Each month, you'll face new situations and have to make decisions.</p>
+                    <p>You'll need to:</p>
+                    <ul>
+                        <li>Read the information carefully</li>
+                        <li>Look at documents when needed</li>
+                        <li>Answer questions by selecting the best option</li>
+                        <li>Learn from the feedback after each decision</li>
+                    </ul>
+                    <p>First, let's review the farm's basic documents to understand their situation.</p>
+                </div>
+                
+                <div class="glossary-box">
+                    <h3>Key Terms</h3>
+                    <p>Here are some important words you'll see in this simulation:</p>
+                    <ul>
+                        <li><strong>Compliance</strong>: Following all the rules and laws that apply to a business</li>
+                        <li><strong>Partnership</strong>: A business owned by two or more people who share profits and responsibilities</li>
+                        <li><strong>Liability</strong>: Legal responsibility for something, especially costs or damages</li>
+                        <li><strong>Superannuation</strong>: Money paid by employers into a fund for workers' retirement (also called "super")</li>
+                    </ul>
+                </div>
+                
+                <button id="start-simulation" class="primary-button">Start Simulation</button>
+            </div>
+        </section>
+
+        <!-- Document Review Section -->
+        <section id="document-review" class="section">
+            <div class="section-content">
+                <h2>Initial Document Review</h2>
+                <p>Before we begin the six-month simulation, let's review XYZ Farms' key documents to understand their current situation.</p>
+                
+                <div class="document-tabs">
+                    <div class="tab active" data-tab="profit-loss">Profit & Loss</div>
+                    <div class="tab" data-tab="balance-sheet">Balance Sheet</div>
+                    <div class="tab" data-tab="registration">Business Registration</div>
+                    <div class="tab" data-tab="partnership">Partnership Agreement</div>
+                    <div class="tab" data-tab="employees">Employee Records</div>
+                    <div class="tab" data-tab="licenses">Licenses & Permits</div>
+                </div>
+                
+                <div class="document-content">
+                    <!-- Profit & Loss Statement -->
+                    <div id="profit-loss" class="document active">
+                        <h3>XYZ Farms - Profit and Loss Statement</h3>
+                        <h4>For the Six-Month Period Ending December 31, 2023</h4>
+                        <div class="document-body">
+                            <div class="document-section">
+                                <h5>Revenue:</h5>
+                                <div class="document-line">
+                                    <span class="line-item">Sales of Produce:</span>
+                                    <span class="line-value">$100,000</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Government Subsidies:</span>
+                                    <span class="line-value">$5,000</span>
+                                </div>
+                                <div class="document-line total">
+                                    <span class="line-item">Total Revenue:</span>
+                                    <span class="line-value">$105,000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="document-section">
+                                <h5>Expenses:</h5>
+                                <div class="document-line">
+                                    <span class="line-item">Cost of Goods Sold:</span>
+                                    <span class="line-value">$40,000</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Wages and Salaries:</span>
+                                    <span class="line-value">$30,000</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Superannuation Contributions:</span>
+                                    <span class="line-value">$3,000</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Rent and Utilities:</span>
+                                    <span class="line-value">$5,000</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Tax Payable:</span>
+                                    <span class="line-value">$7,000</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Other Expenses:</span>
+                                    <span class="line-value">$4,000</span>
+                                </div>
+                                <div class="document-line total">
+                                    <span class="line-item">Total Expenses:</span>
+                                    <span class="line-value">$89,000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="document-section">
+                                <div class="document-line net-profit">
+                                    <span class="line-item">Net Profit:</span>
+                                    <span class="line-value">$16,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Balance Sheet -->
+                    <div id="balance-sheet" class="document">
+                        <h3>XYZ Farms - Balance Sheet</h3>
+                        <h4>As of December 31, 2023</h4>
+                        <div class="document-body">
+                            <div class="document-section">
+                                <h5>Assets:</h5>
+                                <div class="document-subsection">
+                                    <div class="document-line">
+                                        <span class="line-item">Current Assets:</span>
+                                        <span class="line-value">$50,000</span>
+                                    </div>
+                                    <div class="document-line indented">
+                                        <span class="line-item">Cash:</span>
+                                        <span class="line-value">$10,000</span>
+                                    </div>
+                                    <div class="document-line indented">
+                                        <span class="line-item">Accounts Receivable:</span>
+                                        <span class="line-value">$15,000</span>
+                                    </div>
+                                    <div class="document-line indented">
+                                        <span class="line-item">Inventory:</span>
+                                        <span class="line-value">$25,000</span>
+                                    </div>
+                                </div>
+                                <div class="document-subsection">
+                                    <div class="document-line">
+                                        <span class="line-item">Fixed Assets:</span>
+                                        <span class="line-value">$80,000</span>
+                                    </div>
+                                    <div class="document-line indented">
+                                        <span class="line-item">Land:</span>
+                                        <span class="line-value">$50,000</span>
+                                    </div>
+                                    <div class="document-line indented">
+                                        <span class="line-item">Equipment:</span>
+                                        <span class="line-value">$30,000</span>
+                                    </div>
+                                </div>
+                                <div class="document-line total">
+                                    <span class="line-item">Total Assets:</span>
+                                    <span class="line-value">$130,000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="document-section">
+                                <h5>Liabilities:</h5>
+                                <div class="document-subsection">
+                                    <div class="document-line">
+                                        <span class="line-item">Current Liabilities:</span>
+                                        <span class="line-value">$20,000</span>
+                                    </div>
+                                    <div class="document-line indented">
+                                        <span class="line-item">Accounts Payable:</span>
+                                        <span class="line-value">$10,000</span>
+                                    </div>
+                                    <div class="document-line indented">
+                                        <span class="line-item">Short-term Loans:</span>
+                                        <span class="line-value">$10,000</span>
+                                    </div>
+                                </div>
+                                <div class="document-subsection">
+                                    <div class="document-line">
+                                        <span class="line-item">Long-term Liabilities:</span>
+                                        <span class="line-value">$30,000</span>
+                                    </div>
+                                    <div class="document-line indented">
+                                        <span class="line-item">Bank Loans:</span>
+                                        <span class="line-value">$30,000</span>
+                                    </div>
+                                </div>
+                                <div class="document-line total">
+                                    <span class="line-item">Total Liabilities:</span>
+                                    <span class="line-value">$50,000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="document-section">
+                                <h5>Equity:</h5>
+                                <div class="document-line">
+                                    <span class="line-item">Owner's Equity:</span>
+                                    <span class="line-value">$80,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Business Registration -->
+                    <div id="registration" class="document">
+                        <h3>Business Registration Details</h3>
+                        <div class="document-body">
+                            <div class="document-line">
+                                <span class="line-item">Business Name:</span>
+                                <span class="line-value">XYZ Farms Pty Ltd</span>
+                            </div>
+                            <div class="document-line">
+                                <span class="line-item">Business Structure:</span>
+                                <span class="line-value">Partnership</span>
+                            </div>
+                            <div class="document-line">
+                                <span class="line-item">Registration Number:</span>
+                                <span class="line-value">123456789</span>
+                            </div>
+                            <div class="document-line">
+                                <span class="line-item">Date of Registration:</span>
+                                <span class="line-value">January 15, 2022</span>
+                            </div>
+                            <div class="document-line">
+                                <span class="line-item">Registered Address:</span>
+                                <span class="line-value">123 Farm Lane, Rural Town, State, Postcode</span>
+                            </div>
+                            <div class="document-section">
+                                <h5>Directors/Partners:</h5>
+                                <div class="document-line">
+                                    <span class="line-item">John Doe</span>
+                                    <span class="line-value">(Managing Partner)</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Jane Smith</span>
+                                    <span class="line-value">(Financial Partner)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Partnership Agreement -->
+                    <div id="partnership" class="document">
+                        <h3>Partnership Agreement Excerpt</h3>
+                        <div class="document-body">
+                            <p>This Partnership Agreement is entered into between XYZ Farms Pty Ltd and the undersigned partners on January 15, 2022. The following key terms apply:</p>
+                            
+                            <ol>
+                                <li><strong>Partnership Purpose:</strong> To operate and manage agricultural activities including crop production, livestock, and related services.</li>
+                                <li><strong>Profit Sharing:</strong> Profits and losses shall be shared equally among partners.</li>
+                                <li><strong>Responsibilities:</strong>
+                                    <ul>
+                                        <li>Partner A (John Doe) is responsible for day-to-day operations and management.</li>
+                                        <li>Partner B (Jane Smith) is responsible for financial management and compliance.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Duration:</strong> The partnership is established for an initial term of 5 years, with renewal options subject to mutual agreement.</li>
+                                <li><strong>Termination:</strong> Any partner may exit with a 90-day written notice. All outstanding liabilities shall be settled as per agreed terms.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <!-- Employee Records -->
+                    <div id="employees" class="document">
+                        <h3>Employee Records Summary</h3>
+                        <h4>As of December 31, 2023</h4>
+                        <div class="document-body">
+                            <table class="employee-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Employment Type</th>
+                                        <th>Hourly Rate</th>
+                                        <th>Award</th>
+                                        <th>Start Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Michael Brown</td>
+                                        <td>Farm Manager</td>
+                                        <td>Full-time</td>
+                                        <td>$28.50</td>
+                                        <td>Horticulture Award</td>
+                                        <td>Feb 10, 2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sarah Johnson</td>
+                                        <td>Administrative Assistant</td>
+                                        <td>Part-time</td>
+                                        <td>$24.80</td>
+                                        <td>Clerks Award</td>
+                                        <td>Mar 15, 2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>David Wilson</td>
+                                        <td>Farm Hand</td>
+                                        <td>Full-time</td>
+                                        <td>$25.20</td>
+                                        <td>Horticulture Award</td>
+                                        <td>Apr 5, 2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Emma Garcia</td>
+                                        <td>Farm Hand</td>
+                                        <td>Casual</td>
+                                        <td>$27.50</td>
+                                        <td>Horticulture Award</td>
+                                        <td>Jun 20, 2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robert Chen</td>
+                                        <td>Equipment Operator</td>
+                                        <td>Full-time</td>
+                                        <td>$26.80</td>
+                                        <td>Horticulture Award</td>
+                                        <td>Aug 12, 2022</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="document-note">
+                                <p><strong>Note:</strong> Current Horticulture Award minimum rate for Level 2 employees is $25.20/hour. Clerks Award minimum rate for Level 2 employees is $24.80/hour.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Licenses & Permits -->
+                    <div id="licenses" class="document">
+                        <h3>Licenses & Permits</h3>
+                        <h4>As of December 31, 2023</h4>
+                        <div class="document-body">
+                            <table class="license-table">
+                                <thead>
+                                    <tr>
+                                        <th>License/Permit Type</th>
+                                        <th>Number</th>
+                                        <th>Issuing Authority</th>
+                                        <th>Issue Date</th>
+                                        <th>Expiry Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Water Usage License</td>
+                                        <td>WUL-2023-456</td>
+                                        <td>State Water Authority</td>
+                                        <td>Jan 15, 2023</td>
+                                        <td>Jan 14, 2024</td>
+                                        <td class="status-warning">Expiring Soon</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemical Storage Permit</td>
+                                        <td>CSP-2022-789</td>
+                                        <td>Environmental Protection Agency</td>
+                                        <td>Mar 10, 2022</td>
+                                        <td>Mar 9, 2024</td>
+                                        <td class="status-valid">Valid</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Livestock Management Certification</td>
+                                        <td>LMC-2023-234</td>
+                                        <td>Department of Agriculture</td>
+                                        <td>Jun 5, 2023</td>
+                                        <td>Jun 4, 2025</td>
+                                        <td class="status-valid">Valid</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Food Safety Certification</td>
+                                        <td>FSC-2022-567</td>
+                                        <td>Food Standards Authority</td>
+                                        <td>Nov 20, 2022</td>
+                                        <td>Nov 19, 2023</td>
+                                        <td class="status-expired">Expired</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vehicle Operation Permit</td>
+                                        <td>VOP-2023-890</td>
+                                        <td>Transport Department</td>
+                                        <td>Aug 15, 2023</td>
+                                        <td>Aug 14, 2024</td>
+                                        <td class="status-valid">Valid</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="document-review-questions">
+                    <h3>Initial Document Review Questions</h3>
+                    <p>Based on your review of the documents, answer the following questions:</p>
+                    
+                    <div class="question">
+                        <p>1. What percentage of revenue is spent on wages and salaries?</p>
+                        <div class="options">
+                            <label><input type="radio" name="wage-percentage" value="20%"> 20%</label>
+                            <label><input type="radio" name="wage-percentage" value="28.6%"> 28.6%</label>
+                            <label><input type="radio" name="wage-percentage" value="33.7%"> 33.7%</label>
+                        </div>
+                        <div class="feedback" id="wage-percentage-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>2. Is the superannuation contribution rate compliant with the current legal requirement (10.5% of wages)?</p>
+                        <div class="options">
+                            <label><input type="radio" name="super-compliance" value="yes"> Yes, it's compliant</label>
+                            <label><input type="radio" name="super-compliance" value="no"> No, it's not compliant</label>
+                        </div>
+                        <div class="feedback" id="super-compliance-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>3. Based on the employee records, are all employees being paid at or above the minimum award rates?</p>
+                        <div class="options">
+                            <label><input type="radio" name="award-rates" value="yes"> Yes, all employees meet or exceed minimum award rates</label>
+                            <label><input type="radio" name="award-rates" value="no"> No, some employees are paid below minimum award rates</label>
+                        </div>
+                        <div class="feedback" id="award-rates-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>4. Which license or permit requires immediate attention?</p>
+                        <div class="options">
+                            <label><input type="radio" name="license-attention" value="water"> Water Usage License</label>
+                            <label><input type="radio" name="license-attention" value="chemical"> Chemical Storage Permit</label>
+                            <label><input type="radio" name="license-attention" value="food"> Food Safety Certification</label>
+                            <label><input type="radio" name="license-attention" value="vehicle"> Vehicle Operation Permit</label>
+                        </div>
+                        <div class="feedback" id="license-attention-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>5. Is there a mismatch between the business name and structure?</p>
+                        <div class="options">
+                            <label><input type="radio" name="business-structure" value="yes"> Yes, there is a mismatch</label>
+                            <label><input type="radio" name="business-structure" value="no"> No, everything is consistent</label>
+                        </div>
+                        <div class="feedback" id="business-structure-feedback"></div>
+                    </div>
+                </div>
+                
+                <button id="document-review-continue" class="primary-button" disabled>Continue to January</button>
+            </div>
+        </section>
+
+        <!-- January Section -->
+        <section id="january" class="section">
+            <div class="section-content">
+                <h2>January 2024</h2>
+                <div class="month-intro">
+                    <p>It's the start of a new year at XYZ Farms. The partners want to make sure they begin the year with all their legal and insurance requirements in order.</p>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 1: Water License Renewal</h3>
+                    <p>The farm's Water Usage License expires on January 14, 2024. Without this license, the farm cannot legally use water for irrigation.</p>
+                    <img src="https://placeholder.pics/svg/300x200/DEDEDE/555555/water-license-image" alt="Water license document" class="scenario-image">
+                    
+                    <div class="question">
+                        <p>What action should be taken regarding the Water Usage License?</p>
+                        <div class="options">
+                            <label><input type="radio" name="water-license" value="renew-now"> Renew immediately</label>
+                            <label><input type="radio" name="water-license" value="wait"> Wait until it expires</label>
+                            <label><input type="radio" name="water-license" value="check"> Check if renewal is actually needed</label>
+                        </div>
+                        <div class="feedback" id="water-license-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 2: Food Safety Certification</h3>
+                    <p>You notice that the farm's Food Safety Certification expired in November 2023. This certification is required for selling produce to certain buyers.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Email from Major Buyer</h4>
+                        <div class="email-content">
+                            <p><strong>From:</strong> procurement@biggrocer.com<br>
+                            <strong>To:</strong> info@xyzfarms.com<br>
+                            <strong>Subject:</strong> Upcoming Order and Certification Requirements</p>
+                            <p>Dear XYZ Farms,</p>
+                            <p>We're planning our February produce orders and would like to include your farm's vegetables. Before finalizing, please send us your current Food Safety Certification as required by our supplier agreement.</p>
+                            <p>Thank you,<br>
+                            Procurement Team<br>
+                            Big Grocer Supermarkets</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What should you advise the farm to do about the expired Food Safety Certification?</p>
+                        <div class="options">
+                            <label><input type="radio" name="food-cert" value="renew"> Apply for renewal immediately</label>
+                            <label><input type="radio" name="food-cert" value="ignore"> Ignore it since most buyers don't check</label>
+                            <label><input type="radio" name="food-cert" value="fake"> Send the expired certificate and hope they don't notice the date</label>
+                        </div>
+                        <div class="feedback" id="food-cert-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 3: Insurance Review</h3>
+                    <p>January is a good time to review insurance policies. Here are the current policies for XYZ Farms:</p>
+                    
+                    <div class="document-tabs insurance-tabs">
+                        <div class="tab active" data-tab="workers-comp-jan">Workers' Comp</div>
+                        <div class="tab" data-tab="public-liability-jan">Public Liability</div>
+                        <div class="tab" data-tab="property-jan">Property</div>
+                    </div>
+                    
+                    <div class="document-content">
+                        <!-- Workers' Compensation Insurance -->
+                        <div id="workers-comp-jan" class="document active">
+                            <h3>Workers' Compensation Insurance Policy</h3>
+                            <div class="document-body">
+                                <div class="document-line">
+                                    <span class="line-item">Policy Number:</span>
+                                    <span class="line-value">WC-2023-001</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Insurer:</span>
+                                    <span class="line-value">ABC Insurance Co.</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Coverage:</span>
+                                    <span class="line-value">This policy covers all employees of XYZ Farms for work-related injuries and illnesses.</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Effective Date:</span>
+                                    <span class="line-value">January 1, 2023</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Expiry Date:</span>
+                                    <span class="line-value">December 31, 2023</span>
+                                </div>
+                                <div class="document-section">
+                                    <h5>Details:</h5>
+                                    <div class="document-line">
+                                        <span class="line-item">Coverage Limit:</span>
+                                        <span class="line-value">$500,000 per claim</span>
+                                    </div>
+                                    <div class="document-line">
+                                        <span class="line-item">Included Employees:</span>
+                                        <span class="line-value">4 full-time and 1 part-time staff</span>
+                                    </div>
+                                    <div class="document-line">
+                                        <span class="line-item">Premium:</span>
+                                        <span class="line-value">$3,000 per annum</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Public Liability Insurance -->
+                        <div id="public-liability-jan" class="document">
+                            <h3>Public Liability Insurance Policy</h3>
+                            <div class="document-body">
+                                <div class="document-line">
+                                    <span class="line-item">Policy Number:</span>
+                                    <span class="line-value">PL-2023-002</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Insurer:</span>
+                                    <span class="line-value">DEF Insurance Co.</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Coverage:</span>
+                                    <span class="line-value">This policy covers third-party injury and property damage claims arising from XYZ Farms' operations.</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Effective Date:</span>
+                                    <span class="line-value">February 1, 2023</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Expiry Date:</span>
+                                    <span class="line-value">January 31, 2024</span>
+                                </div>
+                                <div class="document-section">
+                                    <h5>Details:</h5>
+                                    <div class="document-line">
+                                        <span class="line-item">Coverage Limit:</span>
+                                        <span class="line-value">$1,000,000 per incident</span>
+                                    </div>
+                                    <div class="document-line">
+                                        <span class="line-item">Conditions:</span>
+                                        <span class="line-value">Must be renewed annually</span>
+                                    </div>
+                                    <div class="document-line">
+                                        <span class="line-item">Premium:</span>
+                                        <span class="line-value">$2,500 per annum</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Property Insurance -->
+                        <div id="property-jan" class="document">
+                            <h3>Property Insurance Policy</h3>
+                            <div class="document-body">
+                                <div class="document-line">
+                                    <span class="line-item">Policy Number:</span>
+                                    <span class="line-value">PI-2023-003</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Insurer:</span>
+                                    <span class="line-value">GHI Insurance Co.</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Coverage:</span>
+                                    <span class="line-value">This policy provides coverage for damage or loss to buildings and equipment owned by XYZ Farms.</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Effective Date:</span>
+                                    <span class="line-value">March 1, 2023</span>
+                                </div>
+                                <div class="document-line">
+                                    <span class="line-item">Expiry Date:</span>
+                                    <span class="line-value">February 28, 2024</span>
+                                </div>
+                                <div class="document-section">
+                                    <h5>Details:</h5>
+                                    <div class="document-line">
+                                        <span class="line-item">Coverage Limit:</span>
+                                        <span class="line-value">$100,000</span>
+                                    </div>
+                                    <div class="document-line">
+                                        <span class="line-item">Coverage Includes:</span>
+                                        <span class="line-value">Farm buildings, machinery, and equipment</span>
+                                    </div>
+                                    <div class="document-line">
+                                        <span class="line-item">Premium:</span>
+                                        <span class="line-value">$2,000 per annum</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>Based on your review of the insurance policies, which issue needs immediate attention?</p>
+                        <div class="options">
+                            <label><input type="radio" name="insurance-issue" value="workers-comp"> Workers' Compensation policy has expired</label>
+                            <label><input type="radio" name="insurance-issue" value="public"> Public Liability policy is about to expire</label>
+                            <label><input type="radio" name="insurance-issue" value="property"> Property Insurance coverage is too low compared to assets</label>
+                            <label><input type="radio" name="insurance-issue" value="none"> No immediate issues</label>
+                        </div>
+                        <div class="feedback" id="insurance-issue-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What action should be taken regarding the Workers' Compensation policy?</p>
+                        <div class="options">
+                            <label><input type="radio" name="workers-comp-action" value="renew"> Renew immediately</label>
+                            <label><input type="radio" name="workers-comp-action" value="update"> Renew and update to include the casual employee</label>
+                            <label><input type="radio" name="workers-comp-action" value="wait"> Wait until next month</label>
+                        </div>
+                        <div class="feedback" id="workers-comp-action-feedback"></div>
+                    </div>
+                </div>
+                
+                <button id="january-continue" class="primary-button" disabled>Continue to February</button>
+            </div>
+        </section>
+
+        <!-- February Section -->
+        <section id="february" class="section">
+            <div class="section-content">
+                <h2>February 2024</h2>
+                <div class="month-intro">
+                    <p>February brings new challenges for XYZ Farms. The busy growing season is approaching, and there are several legal and insurance matters to address.</p>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 1: New Employee Hire</h3>
+                    <p>XYZ Farms needs to hire a new seasonal worker to help with the upcoming planting season. They've found a suitable candidate named Lisa Thompson.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Employment Contract Draft</h4>
+                        <div class="contract-content">
+                            <p><strong>Position:</strong> Seasonal Farm Hand<br>
+                            <strong>Employment Type:</strong> Casual<br>
+                            <strong>Hourly Rate:</strong> $24.00<br>
+                            <strong>Award:</strong> Horticulture Award<br>
+                            <strong>Start Date:</strong> February 15, 2024<br>
+                            <strong>Expected End Date:</strong> May 31, 2024</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>Is the proposed hourly rate for the new casual employee compliant with the Horticulture Award?</p>
+                        <div class="options">
+                            <label><input type="radio" name="new-employee-rate" value="yes"> Yes, it's compliant</label>
+                            <label><input type="radio" name="new-employee-rate" value="no"> No, it's below the minimum rate</label>
+                        </div>
+                        <div class="feedback" id="new-employee-rate-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What additional action should be taken before hiring the new employee?</p>
+                        <div class="options">
+                            <label><input type="radio" name="new-employee-action" value="nothing"> No additional action needed</label>
+                            <label><input type="radio" name="new-employee-action" value="insurance"> Update the Workers' Compensation insurance</label>
+                            <label><input type="radio" name="new-employee-action" value="both"> Update both the insurance and add casual loading to the pay rate</label>
+                        </div>
+                        <div class="feedback" id="new-employee-action-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 2: Public Liability Insurance Renewal</h3>
+                    <p>The farm's Public Liability Insurance is due to expire on January 31, 2024. The insurance broker has sent a renewal notice with a premium increase.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Insurance Renewal Notice</h4>
+                        <div class="notice-content">
+                            <p><strong>Policy:</strong> Public Liability Insurance<br>
+                            <strong>Current Premium:</strong> $2,500 per annum<br>
+                            <strong>New Premium:</strong> $2,800 per annum<br>
+                            <strong>Coverage Limit:</strong> $1,000,000 per incident<br>
+                            <strong>Renewal Deadline:</strong> January 31, 2024</p>
+                            <p>Note: Premium increase reflects industry-wide adjustments to risk assessment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What action should be taken regarding the Public Liability Insurance?</p>
+                        <div class="options">
+                            <label><input type="radio" name="liability-renewal" value="renew"> Renew at the increased premium</label>
+                            <label><input type="radio" name="liability-renewal" value="negotiate"> Try to negotiate a lower premium</label>
+                            <label><input type="radio" name="liability-renewal" value="shop"> Shop around for quotes from other insurers</label>
+                            <label><input type="radio" name="liability-renewal" value="reduce"> Reduce coverage to keep the premium the same</label>
+                        </div>
+                        <div class="feedback" id="liability-renewal-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 3: Business Structure Issue</h3>
+                    <p>You've identified a mismatch between the business name (which includes "Pty Ltd") and the actual business structure (which is a partnership). The partners ask for your advice.</p>
+                    
+                    <div class="question">
+                        <p>What should you recommend regarding the business structure issue?</p>
+                        <div class="options">
+                            <label><input type="radio" name="structure-recommendation" value="ignore"> No action needed, it's just a name</label>
+                            <label><input type="radio" name="structure-recommendation" value="rename"> Change the business name to remove "Pty Ltd"</label>
+                            <label><input type="radio" name="structure-recommendation" value="convert"> Convert the partnership to a company structure</label>
+                            <label><input type="radio" name="structure-recommendation" value="consult"> Consult with a business lawyer for options</label>
+                        </div>
+                        <div class="feedback" id="structure-recommendation-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What are the potential consequences of not addressing this issue?</p>
+                        <div class="options">
+                            <label><input type="radio" name="structure-consequences" value="none"> No significant consequences</label>
+                            <label><input type="radio" name="structure-consequences" value="legal"> Potential legal issues and fines</label>
+                            <label><input type="radio" name="structure-consequences" value="liability"> Partners could lose limited liability protection they think they have</label>
+                            <label><input type="radio" name="structure-consequences" value="both"> Both legal issues and liability protection concerns</label>
+                        </div>
+                        <div class="feedback" id="structure-consequences-feedback"></div>
+                    </div>
+                </div>
+                
+                <button id="february-continue" class="primary-button" disabled>Continue to March</button>
+            </div>
+        </section>
+
+        <!-- March Section -->
+        <section id="march" class="section">
+            <div class="section-content">
+                <h2>March 2024</h2>
+                <div class="month-intro">
+                    <p>March is a busy month at XYZ Farms with planting in full swing. Several compliance matters need attention this month.</p>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 1: Superannuation Review</h3>
+                    <p>After reviewing the financial records more closely, you notice that the superannuation contributions for employees may not be correct.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Superannuation Calculation</h4>
+                        <div class="calculation-content">
+                            <p><strong>Total Wages (6 months):</strong> $30,000<br>
+                            <strong>Required Super Rate:</strong> 10.5%<br>
+                            <strong>Required Super Amount:</strong> $3,150<br>
+                            <strong>Actual Super Paid:</strong> $3,000<br>
+                            <strong>Shortfall:</strong> $150</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What action should be taken regarding the superannuation shortfall?</p>
+                        <div class="options">
+                            <label><input type="radio" name="super-shortfall" value="ignore"> Ignore it as it's a small amount</label>
+                            <label><input type="radio" name="super-shortfall" value="pay"> Pay the shortfall immediately</label>
+                            <label><input type="radio" name="super-shortfall" value="review"> Review all calculations first, then pay any confirmed shortfall</label>
+                        </div>
+                        <div class="feedback" id="super-shortfall-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>How should the farm prevent future superannuation shortfalls?</p>
+                        <div class="options">
+                            <label><input type="radio" name="super-prevention" value="system"> Implement a payroll system that automatically calculates correct super</label>
+                            <label><input type="radio" name="super-prevention" value="quarterly"> Switch to quarterly super reviews</label>
+                            <label><input type="radio" name="super-prevention" value="round"> Round down calculations to make them easier</label>
+                        </div>
+                        <div class="feedback" id="super-prevention-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 2: Equipment Purchase</h3>
+                    <p>XYZ Farms is purchasing a new tractor worth $45,000. This is a significant investment for the farm.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Purchase Agreement Summary</h4>
+                        <div class="purchase-content">
+                            <p><strong>Item:</strong> Agricultural Tractor Model X200<br>
+                            <strong>Purchase Price:</strong> $45,000<br>
+                            <strong>Delivery Date:</strong> March 20, 2024<br>
+                            <strong>Payment Terms:</strong> 20% deposit, remainder on delivery<br>
+                            <strong>Warranty:</strong> 2 years parts and labor</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What insurance action should be taken before the tractor is delivered?</p>
+                        <div class="options">
+                            <label><input type="radio" name="tractor-insurance" value="nothing"> No action needed until after delivery</label>
+                            <label><input type="radio" name="tractor-insurance" value="update"> Update the property insurance to include the new tractor</label>
+                            <label><input type="radio" name="tractor-insurance" value="separate"> Purchase a separate equipment insurance policy</label>
+                        </div>
+                        <div class="feedback" id="tractor-insurance-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>How should this purchase be documented for tax and compliance purposes?</p>
+                        <div class="options">
+                            <label><input type="radio" name="purchase-documentation" value="expense"> Record as a regular expense</label>
+                            <label><input type="radio" name="purchase-documentation" value="asset"> Record as a capital asset and calculate depreciation</label>
+                            <label><input type="radio" name="purchase-documentation" value="split"> Split the cost over multiple tax years</label>
+                        </div>
+                        <div class="feedback" id="purchase-documentation-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 3: Chemical Storage Compliance</h3>
+                    <p>The farm uses various agricultural chemicals that must be stored according to regulations. An inspection is scheduled for next month.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Chemical Storage Requirements</h4>
+                        <div class="requirements-content">
+                            <ul>
+                                <li>Chemicals must be stored in a locked, well-ventilated area</li>
+                                <li>Safety Data Sheets (SDS) must be readily available</li>
+                                <li>Incompatible chemicals must be separated</li>
+                                <li>Spill containment measures must be in place</li>
+                                <li>Staff must be trained in handling procedures</li>
+                                <li>Chemical Storage Permit must be current</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What should be done to prepare for the chemical storage inspection?</p>
+                        <div class="options">
+                            <label><input type="radio" name="chemical-inspection" value="nothing"> Nothing, the farm is already compliant</label>
+                            <label><input type="radio" name="chemical-inspection" value="audit"> Conduct a self-audit using the requirements checklist</label>
+                            <label><input type="radio" name="chemical-inspection" value="reschedule"> Try to reschedule the inspection</label>
+                        </div>
+                        <div class="feedback" id="chemical-inspection-feedback"></div>
+                    </div>
+                </div>
+                
+                <button id="march-continue" class="primary-button" disabled>Continue to April</button>
+            </div>
+        </section>
+
+        <!-- April Section -->
+        <section id="april" class="section">
+            <div class="section-content">
+                <h2>April 2024</h2>
+                <div class="month-intro">
+                    <p>April brings new challenges as the farm continues its operations. Several compliance and insurance matters need attention.</p>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 1: Workplace Incident</h3>
+                    <p>A farm worker has suffered a minor injury while operating equipment. The incident needs to be properly documented and reported.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Incident Report</h4>
+                        <div class="incident-content">
+                            <p><strong>Employee:</strong> David Wilson<br>
+                            <strong>Date of Incident:</strong> April 5, 2024<br>
+                            <strong>Nature of Injury:</strong> Minor cut requiring first aid<br>
+                            <strong>Equipment Involved:</strong> Pruning shears<br>
+                            <strong>Time Lost:</strong> 2 hours<br>
+                            <strong>First Aid Provided:</strong> Wound cleaning and bandaging</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What actions should be taken following this workplace incident?</p>
+                        <div class="options">
+                            <label><input type="radio" name="incident-action" value="nothing"> No action needed as it was a minor injury</label>
+                            <label><input type="radio" name="incident-action" value="record"> Record the incident in the workplace register only</label>
+                            <label><input type="radio" name="incident-action" value="report"> Record the incident and report it to the workers' compensation insurer</label>
+                        </div>
+                        <div class="feedback" id="incident-action-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What preventive measures should be implemented?</p>
+                        <div class="options">
+                            <label><input type="radio" name="preventive-measures" value="nothing"> No measures needed for such a minor incident</label>
+                            <label><input type="radio" name="preventive-measures" value="training"> Provide refresher training on safe equipment use</label>
+                            <label><input type="radio" name="preventive-measures" value="review"> Review the incident, update procedures, and provide training</label>
+                        </div>
+                        <div class="feedback" id="preventive-measures-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 2: Quarterly BAS Preparation</h3>
+                    <p>It's time to prepare the Business Activity Statement (BAS) for the January-March quarter.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Financial Summary for Q1 2024</h4>
+                        <div class="financial-content">
+                            <p><strong>Total Sales:</strong> $55,000<br>
+                            <strong>GST Collected:</strong> $5,500<br>
+                            <strong>Total Purchases:</strong> $30,000<br>
+                            <strong>GST Paid on Purchases:</strong> $3,000<br>
+                            <strong>Wages Paid:</strong> $18,000<br>
+                            <strong>PAYG Withholding:</strong> $3,600</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What is the net GST amount to be reported on the BAS?</p>
+                        <div class="options">
+                            <label><input type="radio" name="gst-calculation" value="2500"> $2,500 payable</label>
+                            <label><input type="radio" name="gst-calculation" value="8500"> $8,500 payable</label>
+                            <label><input type="radio" name="gst-calculation" value="2500-refund"> $2,500 refundable</label>
+                        </div>
+                        <div class="feedback" id="gst-calculation-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>When should the BAS be lodged and paid?</p>
+                        <div class="options">
+                            <label><input type="radio" name="bas-deadline" value="april28"> April 28, 2024</label>
+                            <label><input type="radio" name="bas-deadline" value="may21"> May 21, 2024</label>
+                            <label><input type="radio" name="bas-deadline" value="july28"> July 28, 2024</label>
+                        </div>
+                        <div class="feedback" id="bas-deadline-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 3: Missing Insurance Coverage</h3>
+                    <p>After reviewing all insurance policies, you notice that XYZ Farms doesn't have crop insurance or business interruption insurance.</p>
+                    
+                    <div class="question">
+                        <p>What should you recommend regarding the missing insurance coverage?</p>
+                        <div class="options">
+                            <label><input type="radio" name="missing-insurance" value="none"> No additional insurance needed</label>
+                            <label><input type="radio" name="missing-insurance" value="crop"> Obtain crop insurance only</label>
+                            <label><input type="radio" name="missing-insurance" value="interruption"> Obtain business interruption insurance only</label>
+                            <label><input type="radio" name="missing-insurance" value="both"> Obtain both types of insurance</label>
+                        </div>
+                        <div class="feedback" id="missing-insurance-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>How should the farm prioritize these insurance needs?</p>
+                        <div class="options">
+                            <label><input type="radio" name="insurance-priority" value="immediate"> Obtain both immediately regardless of cost</label>
+                            <label><input type="radio" name="insurance-priority" value="quotes"> Get quotes for both and evaluate cost-benefit</label>
+                            <label><input type="radio" name="insurance-priority" value="risk"> Conduct a risk assessment to determine which is more critical</label>
+                        </div>
+                        <div class="feedback" id="insurance-priority-feedback"></div>
+                    </div>
+                </div>
+                
+                <button id="april-continue" class="primary-button" disabled>Continue to May</button>
+            </div>
+        </section>
+
+        <!-- May Section -->
+        <section id="may" class="section">
+            <div class="section-content">
+                <h2>May 2024</h2>
+                <div class="month-intro">
+                    <p>May is a critical month for XYZ Farms as they prepare for the upcoming harvest. Several compliance matters need attention.</p>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 1: Employee Pay Review</h3>
+                    <p>It's time for a regular review of employee pay rates to ensure compliance with award rates, which have recently been updated.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Updated Award Rates (Effective May 1, 2024)</h4>
+                        <div class="award-content">
+                            <table class="award-table">
+                                <thead>
+                                    <tr>
+                                        <th>Award</th>
+                                        <th>Level</th>
+                                        <th>Full-time/Part-time Rate</th>
+                                        <th>Casual Rate (includes 25% loading)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Horticulture Award</td>
+                                        <td>Level 1</td>
+                                        <td>$24.10/hour</td>
+                                        <td>$30.13/hour</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Horticulture Award</td>
+                                        <td>Level 2</td>
+                                        <td>$25.80/hour</td>
+                                        <td>$32.25/hour</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Clerks Award</td>
+                                        <td>Level 1</td>
+                                        <td>$23.90/hour</td>
+                                        <td>$29.88/hour</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Clerks Award</td>
+                                        <td>Level 2</td>
+                                        <td>$25.20/hour</td>
+                                        <td>$31.50/hour</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="document-preview">
+                        <h4>Current Employee Pay Rates</h4>
+                        <div class="pay-content">
+                            <table class="employee-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Employment Type</th>
+                                        <th>Current Rate</th>
+                                        <th>Award Level</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Michael Brown</td>
+                                        <td>Farm Manager</td>
+                                        <td>Full-time</td>
+                                        <td>$28.50/hour</td>
+                                        <td>Horticulture Level 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sarah Johnson</td>
+                                        <td>Administrative Assistant</td>
+                                        <td>Part-time</td>
+                                        <td>$24.80/hour</td>
+                                        <td>Clerks Level 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>David Wilson</td>
+                                        <td>Farm Hand</td>
+                                        <td>Full-time</td>
+                                        <td>$25.20/hour</td>
+                                        <td>Horticulture Level 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Emma Garcia</td>
+                                        <td>Farm Hand</td>
+                                        <td>Casual</td>
+                                        <td>$27.50/hour</td>
+                                        <td>Horticulture Level 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robert Chen</td>
+                                        <td>Equipment Operator</td>
+                                        <td>Full-time</td>
+                                        <td>$26.80/hour</td>
+                                        <td>Horticulture Level 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lisa Thompson</td>
+                                        <td>Seasonal Farm Hand</td>
+                                        <td>Casual</td>
+                                        <td>$31.00/hour</td>
+                                        <td>Horticulture Level 1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>Based on the updated award rates, which employees need a pay rate adjustment?</p>
+                        <div class="options">
+                            <label><input type="radio" name="pay-adjustment" value="none"> No adjustments needed</label>
+                            <label><input type="radio" name="pay-adjustment" value="sarah"> Sarah Johnson only</label>
+                            <label><input type="radio" name="pay-adjustment" value="david"> David Wilson only</label>
+                            <label><input type="radio" name="pay-adjustment" value="emma"> Emma Garcia only</label>
+                            <label><input type="radio" name="pay-adjustment" value="multiple"> Multiple employees</label>
+                        </div>
+                        <div class="feedback" id="pay-adjustment-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>When should the pay rate adjustments be implemented?</p>
+                        <div class="options">
+                            <label><input type="radio" name="adjustment-timing" value="immediately"> Immediately, from the next pay period</label>
+                            <label><input type="radio" name="adjustment-timing" value="month"> At the start of next month</label>
+                            <label><input type="radio" name="adjustment-timing" value="quarter"> At the start of the next quarter</label>
+                        </div>
+                        <div class="feedback" id="adjustment-timing-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 2: Property Insurance Review</h3>
+                    <p>After purchasing the new tractor, you need to review the property insurance to ensure adequate coverage.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Updated Asset Register</h4>
+                        <div class="asset-content">
+                            <table class="asset-table">
+                                <thead>
+                                    <tr>
+                                        <th>Asset Category</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Land</td>
+                                        <td>$50,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Buildings</td>
+                                        <td>$60,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Equipment (including new tractor)</td>
+                                        <td>$75,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inventory</td>
+                                        <td>$25,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Total Assets</strong></td>
+                                        <td><strong>$210,000</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>Is the current property insurance coverage ($100,000) adequate?</p>
+                        <div class="options">
+                            <label><input type="radio" name="property-coverage" value="yes"> Yes, it's adequate</label>
+                            <label><input type="radio" name="property-coverage" value="no"> No, it's inadequate</label>
+                        </div>
+                        <div class="feedback" id="property-coverage-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What action should be taken regarding the property insurance?</p>
+                        <div class="options">
+                            <label><input type="radio" name="property-action" value="nothing"> No action needed</label>
+                            <label><input type="radio" name="property-action" value="increase"> Increase coverage to at least $160,000 (buildings + equipment)</label>
+                            <label><input type="radio" name="property-action" value="full"> Increase coverage to the full asset value of $210,000</label>
+                        </div>
+                        <div class="feedback" id="property-action-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 3: Record-Keeping Compliance</h3>
+                    <p>The farm needs to ensure its record-keeping practices meet legal requirements.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Record-Keeping Requirements</h4>
+                        <div class="requirements-content">
+                            <ul>
+                                <li>Financial records must be kept for at least 5 years</li>
+                                <li>Employee records must be kept for 7 years</li>
+                                <li>Tax invoices must be kept for 5 years</li>
+                                <li>Workplace incident reports must be kept for 7 years</li>
+                                <li>Chemical usage records must be kept for 3 years</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What record-keeping system would you recommend for XYZ Farms?</p>
+                        <div class="options">
+                            <label><input type="radio" name="record-system" value="paper"> Paper-based filing system</label>
+                            <label><input type="radio" name="record-system" value="basic"> Basic digital storage (e.g., computer folders)</label>
+                            <label><input type="radio" name="record-system" value="cloud"> Cloud-based document management system with retention policies</label>
+                        </div>
+                        <div class="feedback" id="record-system-feedback"></div>
+                    </div>
+                </div>
+                
+                <button id="may-continue" class="primary-button" disabled>Continue to June</button>
+            </div>
+        </section>
+
+        <!-- June Section -->
+        <section id="june" class="section">
+            <div class="section-content">
+                <h2>June 2024</h2>
+                <div class="month-intro">
+                    <p>June marks the end of our six-month simulation. It's time to finalize compliance matters and prepare for the future.</p>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 1: End of Financial Year Preparation</h3>
+                    <p>The end of the financial year is approaching, and XYZ Farms needs to prepare for tax obligations.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Financial Year Checklist</h4>
+                        <div class="checklist-content">
+                            <ul>
+                                <li>Reconcile all financial accounts</li>
+                                <li>Ensure all invoices are recorded</li>
+                                <li>Review asset register and depreciation</li>
+                                <li>Prepare employee payment summaries</li>
+                                <li>Verify superannuation contributions</li>
+                                <li>Schedule appointment with accountant</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>When must employee payment summaries be provided to employees?</p>
+                        <div class="options">
+                            <label><input type="radio" name="payment-summaries" value="june30"> June 30, 2024</label>
+                            <label><input type="radio" name="payment-summaries" value="july14"> July 14, 2024</label>
+                            <label><input type="radio" name="payment-summaries" value="august31"> August 31, 2024</label>
+                        </div>
+                        <div class="feedback" id="payment-summaries-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>What is the deadline for making final superannuation contributions for the quarter?</p>
+                        <div class="options">
+                            <label><input type="radio" name="super-deadline" value="june30"> June 30, 2024</label>
+                            <label><input type="radio" name="super-deadline" value="july28"> July 28, 2024</label>
+                            <label><input type="radio" name="super-deadline" value="august31"> August 31, 2024</label>
+                        </div>
+                        <div class="feedback" id="super-deadline-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 2: Business Structure Decision</h3>
+                    <p>After consulting with a business lawyer about the mismatch between the business name (Pty Ltd) and structure (partnership), the partners need to make a decision.</p>
+                    
+                    <div class="document-preview">
+                        <h4>Lawyer's Advice Summary</h4>
+                        <div class="advice-content">
+                            <p><strong>Option 1:</strong> Change business name to remove "Pty Ltd"<br>
+                            <strong>Cost:</strong> Approximately $500<br>
+                            <strong>Timeframe:</strong> 2-4 weeks<br>
+                            <strong>Impact:</strong> Minimal disruption, update business documents</p>
+                            
+                            <p><strong>Option 2:</strong> Convert to company structure<br>
+                            <strong>Cost:</strong> Approximately $2,500<br>
+                            <strong>Timeframe:</strong> 4-6 weeks<br>
+                            <strong>Impact:</strong> Limited liability protection, more complex compliance requirements</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>Based on the farm's situation, which option would you recommend?</p>
+                        <div class="options">
+                            <label><input type="radio" name="structure-decision" value="name"> Change the business name to remove "Pty Ltd"</label>
+                            <label><input type="radio" name="structure-decision" value="company"> Convert to a company structure</label>
+                            <label><input type="radio" name="structure-decision" value="delay"> Delay the decision until next financial year</label>
+                        </div>
+                        <div class="feedback" id="structure-decision-feedback"></div>
+                    </div>
+                </div>
+                
+                <div class="scenario-box">
+                    <h3>Scenario 3: Compliance Calendar Creation</h3>
+                    <p>To help XYZ Farms stay on top of their legal and insurance obligations, you decide to create a compliance calendar for the next 12 months.</p>
+                    
+                    <div class="question">
+                        <p>Which of the following should be included in the compliance calendar? (Select all that apply)</p>
+                        <div class="options">
+                            <label><input type="checkbox" name="calendar-items" value="tax"> Tax lodgment deadlines</label>
+                            <label><input type="checkbox" name="calendar-items" value="super"> Superannuation payment due dates</label>
+                            <label><input type="checkbox" name="calendar-items" value="insurance"> Insurance policy renewal dates</label>
+                            <label><input type="checkbox" name="calendar-items" value="licenses"> License and permit expiry dates</label>
+                            <label><input type="checkbox" name="calendar-items" value="employee"> Employee review dates</label>
+                            <label><input type="checkbox" name="calendar-items" value="equipment"> Equipment maintenance schedules</label>
+                        </div>
+                        <div class="feedback" id="calendar-items-feedback"></div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>How often should compliance matters be reviewed?</p>
+                        <div class="options">
+                            <label><input type="radio" name="review-frequency" value="monthly"> Monthly</label>
+                            <label><input type="radio" name="review-frequency" value="quarterly"> Quarterly</label>
+                            <label><input type="radio" name="review-frequency" value="annually"> Annually</label>
+                        </div>
+                        <div class="feedback" id="review-frequency-feedback"></div>
+                    </div>
+                </div>
+                
+                <button id="june-continue" class="primary-button" disabled>View Final Summary</button>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section id="summary" class="section">
+            <div class="section-content">
+                <h2>Compliance Checklist Summary</h2>
+                <p>Based on your six-month review and decisions, here's a summary of the compliance status and recommended actions for XYZ Farms:</p>
+                
+                <div class="summary-container">
+                    <div class="summary-section">
+                        <h3>Financial Compliance</h3>
+                        <ul id="financial-summary" class="summary-list">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                    
+                    <div class="summary-section">
+                        <h3>Legal Compliance</h3>
+                        <ul id="legal-summary" class="summary-list">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                    
+                    <div class="summary-section">
+                        <h3>Insurance Management</h3>
+                        <ul id="insurance-summary" class="summary-list">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="final-score">
+                    <h3>Your Performance</h3>
+                    <div class="score-container">
+                        <div class="score-circle">
+                            <span id="score-percentage">0%</span>
+                        </div>
+                        <div class="score-details">
+                            <p>You correctly identified <span id="correct-answers">0</span> out of <span id="total-questions">24</span> compliance issues.</p>
+                            <p id="score-message"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="learning-outcomes">
+                    <h3>Key Learning Outcomes</h3>
+                    <ul>
+                        <li>Understanding the importance of matching business structure with business name</li>
+                        <li>Ensuring employee entitlements like superannuation and award rates are correctly calculated</li>
+                        <li>Maintaining appropriate insurance coverage for all business assets and activities</li>
+                        <li>Keeping licenses and permits current to avoid compliance issues</li>
+                        <li>Implementing proper record-keeping systems for financial and legal documents</li>
+                        <li>Creating a compliance calendar to stay on top of deadlines and obligations</li>
+                    </ul>
+                </div>
+                
+                <button id="restart-simulation" class="primary-button">Restart Simulation</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 RIST - Rural Industries Skill Training</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
