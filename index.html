@@ -98,6 +98,8 @@
             }
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <header>
@@ -1682,10 +1684,133 @@
         }
     }
     
-    // Handle PDF export using print dialog
+    // Enhanced PDF export with debugging and fallbacks
     if (exportPdfButton) {
         exportPdfButton.addEventListener('click', function() {
-            window.print();
+            // Show loading message
+            const originalButtonText = this.textContent;
+            this.textContent = "Creating PDF...";
+            this.disabled = true;
+            
+            // Get the summary content
+            const summaryContent = document.getElementById('summary-content');
+            
+            // Make sure all elements are visible for capture
+            const elementsToPrint = summaryContent.querySelectorAll('.summary-section, .student-details, .final-score, .section-scores-summary');
+            elementsToPrint.forEach(el => {
+                el.style.display = 'block';
+                el.style.visibility = 'visible';
+                el.style.opacity = '1';
+            });
+
+            // Create a wrapper with white background to ensure visibility
+            const wrapper = document.createElement('div');
+            wrapper.style.background = 'white';
+            wrapper.style.padding = '20px';
+            wrapper.style.maxWidth = '800px';
+            wrapper.style.margin = '0 auto';
+            wrapper.innerHTML = `
+                <h1 style="text-align: center;">RIST Legal & Insurance Management Simulation Results</h1>
+                <div class="student-details-pdf">
+                    ${document.getElementById('student-info-display').innerHTML}
+                </div>
+                <hr style="margin: 20px 0;">
+                <h2>Summary of Results</h2>
+                ${document.getElementById('financial-summary').outerHTML}
+                ${document.getElementById('legal-summary').outerHTML}
+                ${document.getElementById('insurance-summary').outerHTML}
+                <hr style="margin: 20px 0;">
+                <div class="scores-section">
+                    ${document.querySelector('.section-scores-summary') ? document.querySelector('.section-scores-summary').outerHTML : ''}
+                    <div class="final-score-pdf">
+                        <h3>Final Score</h3>
+                        <p>Score: ${document.getElementById('score-percentage').textContent}</p>
+                        <p>Correct answers: ${document.getElementById('correct-answers').textContent} 
+                        out of ${document.getElementById('total-questions').textContent}</p>
+                        <p>${document.getElementById('score-message').textContent}</p>
+                    </div>
+                </div>
+                <hr style="margin: 20px 0;">
+                <p style="text-align: center; font-style: italic;">Generated on ${new Date().toLocaleDateString()}</p>
+            `;
+            
+            // Create a temporary container in the document
+            document.body.appendChild(wrapper);
+            
+            try {
+                // Try using html2canvas directly
+                html2canvas(wrapper, {
+                    scale: 2,
+                    useCORS: true,
+                    logging: true, // Enable logging for debugging
+                    onclone: function(clonedDoc) {
+                        // Force all images to be loaded in the cloned document
+                        Array.from(clonedDoc.images).forEach(img => {
+                            img.onload = function() {};
+                            if (img.complete) img.src = img.src;
+                        });
+                    }
+                }).then(function(canvas) {
+                    document.body.removeChild(wrapper);
+                    
+                    // Create PDF from canvas
+                    const imgData = canvas.toDataURL('image/jpeg', 1.0);
+                    const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
+                    const pdfWidth = pdf.internal.pageSize.getWidth();
+                    const pdfHeight = pdf.internal.pageSize.getHeight();
+                    const imgWidth = canvas.width;
+                    const imgHeight = canvas.height;
+                    const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+                    const imgX = (pdfWidth - imgWidth * ratio) / 2;
+                    let imgY = 0;
+                    
+                    // Handle multi-page if needed
+                    const contentHeight = imgHeight * ratio;
+                    if (contentHeight > pdfHeight) {
+                        // Content needs multiple pages
+                        let heightLeft = contentHeight;
+                        let position = 0;
+                        let page = 1;
+                        
+                        while (heightLeft > 0) {
+                            pdf.addPage();
+                            pdf.addImage(imgData, 'JPEG', imgX, imgY - position, imgWidth * ratio, imgHeight * ratio);
+                            heightLeft -= pdfHeight;
+                            position += pdfHeight;
+                            page++;
+                        }
+                    } else {
+                        // Content fits in one page
+                        pdf.addImage(imgData, 'JPEG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+                    }
+                    
+                    // Save the PDF
+                    pdf.save('RIST_Simulation_Results.pdf');
+                    
+                    // Restore button
+                    exportPdfButton.textContent = originalButtonText;
+                    exportPdfButton.disabled = false;
+                    
+                    alert("Your PDF has been saved to your downloads folder!");
+                }).catch(function(error) {
+                    console.error("Error generating PDF:", error);
+                    document.body.removeChild(wrapper);
+                    
+                    // Fallback to print method if html2canvas fails
+                    alert("There was an issue creating the PDF. We'll try using the print dialog instead. Please select 'Save as PDF' as the destination.");
+                    window.print();
+                    
+                    exportPdfButton.textContent = originalButtonText;
+                    exportPdfButton.disabled = false;
+                });
+            } catch (error) {
+                console.error("Error in PDF generation:", error);
+                document.body.removeChild(wrapper);
+                alert("There was an issue creating the PDF. Please try using the browser's built-in print function and save as PDF.");
+                
+                exportPdfButton.textContent = originalButtonText;
+                exportPdfButton.disabled = false;
+            }
         });
     }
 });

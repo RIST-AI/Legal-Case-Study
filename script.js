@@ -714,6 +714,11 @@ document.addEventListener('DOMContentLoaded', function() {
             userAnswers.april['missing-insurance'] === correctAnswers['missing-insurance'] && 
             userAnswers.april['insurance-priority'] === correctAnswers['insurance-priority'] ? 'success' : 'error');
         
+        const existingSectionScores = document.querySelector('.section-scores-summary');
+        if (existingSectionScores) {
+            existingSectionScores.remove();
+        } 
+        
         // Section Scores Summary
         const sectionScoresSummary = document.createElement('div');
         sectionScoresSummary.className = 'section-scores-summary';
