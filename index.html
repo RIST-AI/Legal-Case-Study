@@ -8,6 +8,96 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Student info form styling */
+        .info-form {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3a7ca5;
+            box-shadow: 0 0 5px rgba(58, 124, 165, 0.2);
+        }
+
+        .student-details {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            border-left: 4px solid #3a7ca5;
+        }
+
+        .student-details p {
+            margin: 5px 0;
+        }
+
+        .summary-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .secondary-button {
+            background-color: #6c757d;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            background-color: #5a6268;
+        }
+
+        @media print {
+            header, footer, button, .progress-steps, #progress-bar-container, .summary-actions {
+                display: none !important;
+            }
+            
+            body, .section, .section-content {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                color: black;
+                background: white;
+            }
+            
+            .student-details {
+                border-left: 4px solid black;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,7 +113,8 @@
         </div>
         
         <div id="progress-steps">
-            <div class="step active" data-step="introduction">Introduction</div>
+            <div class="step active" data-step="student-info">Student Info</div>
+            <div class="step" data-step="introduction">Introduction</div>
             <div class="step" data-step="document-review">Document Review</div>
             <div class="step" data-step="january">January</div>
             <div class="step" data-step="february">February</div>
@@ -34,8 +125,30 @@
             <div class="step" data-step="summary">Summary</div>
         </div>
 
+        <!-- Student Info Section -->
+        <section id="student-info" class="section active">
+            <div class="section-content">
+                <h2>Student Information</h2>
+                <p>Please enter your information before starting the simulation.</p>
+                
+                <div class="info-form">
+                    <div class="form-group">
+                        <label for="student-name">Full Name:</label>
+                        <input type="text" id="student-name" name="student-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="unit-code">Unit Code:</label>
+                        <input type="text" id="unit-code" name="unit-code" required>
+                    </div>
+                    
+                    <button id="start-introduction" class="primary-button">Continue to Introduction</button>
+                </div>
+            </div>
+        </section>
+
         <!-- Introduction Section -->
-        <section id="introduction" class="section active">
+        <section id="introduction" class="section">
             <div class="section-content">
                 <h2>Welcome to the XYZ Farms Case Study</h2>
                 <p>In this simulation, you will take on the role of a compliance consultant for XYZ Farms, a growing agricultural business. Your task is to review their financial reports, legal documents, and insurance policies to ensure they are meeting all legal requirements and managing risks properly.</p>
@@ -448,7 +561,7 @@
                     </div>
                     
                     <div class="question">
-                        <p>2. Is the superannuation contribution rate compliant with the current legal requirement (10.5% of wages)?</p>
+                        <p>2. Is the superannuation contribution rate compliant with the current legal requirement (11.5% of wages)?</p>
                         <div class="options">
                             <label><input type="radio" name="super-compliance" value="yes"> Yes, it's compliant</label>
                             <label><input type="radio" name="super-compliance" value="no"> No, it's not compliant</label>
@@ -489,6 +602,8 @@
                 <button id="document-review-continue" class="primary-button" disabled>Continue to January</button>
             </div>
         </section>
+
+
 
         <!-- January Section -->
         <section id="january" class="section">
@@ -826,10 +941,10 @@
                         <h4>Superannuation Calculation</h4>
                         <div class="calculation-content">
                             <p><strong>Total Wages (6 months):</strong> $30,000<br>
-                            <strong>Required Super Rate:</strong> 10.5%<br>
-                            <strong>Required Super Amount:</strong> $3,150<br>
-                            <strong>Actual Super Paid:</strong> $3,000<br>
-                            <strong>Shortfall:</strong> $150</p>
+                                <strong>Required Super Rate:</strong> 11.5%<br>
+                                <strong>Required Super Amount:</strong> $3,450<br>
+                                <strong>Actual Super Paid:</strong> $3,000<br>
+                                <strong>Shortfall:</strong> $450</p>
                         </div>
                     </div>
                     
@@ -1197,7 +1312,7 @@
                                         <td>$60,000</td>
                                     </tr>
                                     <tr>
-                                        <td>Equipment (including new tractor)</td>
+                                        <td>Equipment (including new tractor - $45000)</td>
                                         <td>$75,000</td>
                                     </tr>
                                     <tr>
@@ -1214,7 +1329,7 @@
                     </div>
                     
                     <div class="question">
-                        <p>Is the current property insurance coverage ($100,000) adequate?</p>
+                        <p>Is the current buildings and equipment insurance of $100,000 adequate?</p>
                         <div class="options">
                             <label><input type="radio" name="property-coverage" value="yes"> Yes, it's adequate</label>
                             <label><input type="radio" name="property-coverage" value="no"> No, it's inadequate</label>
@@ -1226,7 +1341,7 @@
                         <p>What action should be taken regarding the property insurance?</p>
                         <div class="options">
                             <label><input type="radio" name="property-action" value="nothing"> No action needed</label>
-                            <label><input type="radio" name="property-action" value="increase"> Increase coverage to at least $160,000 (buildings + equipment)</label>
+                            <label><input type="radio" name="property-action" value="increase"> Increase coverage to at least $135,000 (buildings + equipment)</label>
                             <label><input type="radio" name="property-action" value="full"> Increase coverage to the full asset value of $210,000</label>
                         </div>
                         <div class="feedback" id="property-action-feedback"></div>
@@ -1372,12 +1487,15 @@
                 
                 <button id="june-continue" class="primary-button" disabled>View Final Summary</button>
             </div>
-        </section>
-
+        </section>        
         <!-- Summary Section -->
         <section id="summary" class="section">
-            <div class="section-content">
+            <div class="section-content" id="summary-content">
                 <h2>Compliance Checklist Summary</h2>
+                <div id="student-info-display" class="student-details">
+                    <!-- Will be populated with student info -->
+                </div>
+                
                 <p>Based on your six-month review and decisions, here's a summary of the compliance status and recommended actions for XYZ Farms:</p>
                 
                 <div class="summary-container">
@@ -1428,7 +1546,9 @@
                     </ul>
                 </div>
                 
-                <button id="restart-simulation" class="primary-button">Restart Simulation</button>
+                <div class="summary-actions">
+                    <button id="export-pdf" class="primary-button">Save as PDF</button>
+                </div>
             </div>
         </section>
     </main>
@@ -1440,5 +1560,135 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Global student info
+    window.studentInfoComplete = false;
+    const studentData = {
+        name: "",
+        unitCode: "",
+        submissionDate: ""
+    };
+    
+    // Get DOM elements
+    const startIntroButton = document.getElementById('start-introduction');
+    const studentNameInput = document.getElementById('student-name');
+    const unitCodeInput = document.getElementById('unit-code');
+    const exportPdfButton = document.getElementById('export-pdf');
+    const studentInfoDisplay = document.getElementById('student-info-display');
+    
+        // Prevent navigation back to student info page once completed
+        document.querySelectorAll('#progress-steps .step').forEach(step => {
+        step.addEventListener('click', function(e) {
+            if (this.getAttribute('data-step') === 'student-info' && window.studentInfoComplete) {
+                e.preventDefault();
+                e.stopPropagation();
+                alert('You cannot return to the student information page once completed.');
+                return false;
+            }
+        }, true);
+    });
+    
+    // Also add check in main script's navigateToSection function
+    const originalNavigateToSection = window.navigateToSection;
+    window.navigateToSection = function(sectionIndex) {
+        // Check if trying to go back to student info when already completed
+        if (sections[sectionIndex] === 'student-info' && window.studentInfoComplete) {
+            alert('You cannot return to the student information page once completed.');
+            return;
+        }
+        
+        // Call the original function
+        originalNavigateToSection(sectionIndex);
+    };
+    
+    // Handle student info form submission
+    if (startIntroButton) {
+        startIntroButton.addEventListener('click', function() {
+            if (!validateStudentInfo()) {
+                return;
+            }
+            
+            // Save student info
+            studentData.name = studentNameInput.value.trim();
+            studentData.unitCode = unitCodeInput.value.trim();
+            studentData.submissionDate = new Date().toLocaleDateString('en-AU');
+            
+            // Mark student info as completed
+            window.studentInfoComplete = true;
+            
+            // Update student info in summary section
+            updateStudentInfoDisplay();
+            
+            // Navigate to introduction section using direct DOM manipulation
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById('introduction').classList.add('active');
+            
+            // Update progress steps
+            document.querySelectorAll('.step').forEach((step) => {
+                if (step.getAttribute('data-step') === 'student-info' || 
+                    step.getAttribute('data-step') === 'introduction') {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        });
+    }
+    
+    // Prevent navigation to other sections if student info not complete
+    document.querySelectorAll('#progress-steps .step').forEach(step => {
+        step.addEventListener('click', function(e) {
+            if (!window.studentInfoComplete && this.getAttribute('data-step') !== 'student-info') {
+                e.preventDefault();
+                e.stopPropagation();
+                alert('Please enter your student information first.');
+                return false;
+            }
+        }, true);
+    });
+    
+    // Validate student info inputs
+    function validateStudentInfo() {
+        const nameValue = studentNameInput.value.trim();
+        const unitCodeValue = unitCodeInput.value.trim();
+        
+        if (!nameValue) {
+            alert('Please enter your full name.');
+            studentNameInput.focus();
+            return false;
+        }
+        
+        if (!unitCodeValue) {
+            alert('Please enter the unit code.');
+            unitCodeInput.focus();
+            return false;
+        }
+        
+        return true;
+    }
+    
+    // Update student info in the summary section
+    function updateStudentInfoDisplay() {
+        if (studentInfoDisplay) {
+            studentInfoDisplay.innerHTML = `
+                <p><strong>Student Name:</strong> ${studentData.name}</p>
+                <p><strong>Unit Code:</strong> ${studentData.unitCode}</p>
+                <p><strong>Submission Date:</strong> ${studentData.submissionDate}</p>
+            `;
+        }
+    }
+    
+    // Handle PDF export using print dialog
+    if (exportPdfButton) {
+        exportPdfButton.addEventListener('click', function() {
+            window.print();
+        });
+    }
+});
+    </script>
 </body>
 </html>

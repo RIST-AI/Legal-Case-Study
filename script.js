@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'water-license': 'renew-now',
         'food-cert': 'renew',
         'insurance-issue': 'workers-comp',
-        'workers-comp-action': 'update',
+        'workers-comp-action': 'renew',
         
         // February
         'new-employee-rate': 'no',
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Detailed explanations for each answer
     const answerExplanations = {
         'wage-percentage': 'To calculate the percentage of revenue spent on wages, divide the wages ($30,000) by the total revenue ($105,000), then multiply by 100. This gives 28.6% (30,000 ÷ 105,000 × 100 = 28.6%).',
-        'super-compliance': 'The superannuation contribution should be 10.5% of wages. For $30,000 in wages, the correct contribution is $3,150 (30,000 × 0.105 = 3,150). The actual contribution was only $3,000, which is $150 short.',
+        'super-compliance': 'The superannuation contribution should be 11.5% of wages. For $30,000 in wages, the correct contribution is $3,450 (30,000 × 0.115 = 3,450). The actual contribution was only $3,000, which is $450 short.',
         'award-rates': 'All employees are being paid at or above the minimum award rates for their positions as shown in the employee records. Each employee\'s pay rate meets or exceeds the minimum rate for their award level.',
         'license-attention': 'The Food Safety Certification expired in November 2023 (current date is January 2024), making it the most urgent license issue. The Water Usage License is expiring soon but hasn\'t expired yet.',
         'business-structure': 'There is a mismatch between the business structure (partnership) and the business name (which includes "Pty Ltd"). A "Pty Ltd" designation is only appropriate for a registered company, not a partnership.',
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'water-license': 'The Water Usage License expires on January 14, 2024, which is very soon. Without this license, the farm cannot legally use water for irrigation, which would severely impact operations. Immediate renewal is necessary.',
         'food-cert': 'The Food Safety Certification has already expired, and a major buyer is requesting current certification before placing an order. Renewing immediately is necessary to maintain business relationships and comply with regulations.',
         'insurance-issue': 'The Workers\' Compensation policy expired on December 31, 2023, and it\'s now January 2024. This creates immediate legal exposure as all employers must maintain current workers\' compensation insurance for their employees.',
-        'workers-comp-action': 'The policy needs to be renewed immediately, and it should be updated to include all current employees, including the casual employee who may not have been covered in the previous policy.',
+        'workers-comp-action': 'The policy needs to be renewed immediately to maintain legal compliance and ensure all employees are covered in case of workplace injuries.',
         
         'new-employee-rate': 'The proposed rate of $24.00/hour is below the minimum casual rate for Horticulture Award Level 1, which is $30.13/hour including the 25% casual loading. Casual employees must receive the base rate plus a 25% loading.',
         'new-employee-action': 'Two actions are needed: 1) Update the Workers\' Compensation insurance to include the new employee, and 2) Adjust the pay rate to include the required casual loading to meet the minimum award rate.',
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'structure-recommendation': 'Consulting with a business lawyer is the best first step because they can provide expert advice on the legal implications of the mismatch and recommend the most appropriate solution based on the business\'s specific circumstances.',
         'structure-consequences': 'There are two main consequences: 1) Legal issues including potential fines for misrepresentation of business structure, and 2) Partners may incorrectly believe they have limited liability protection when they don\'t, exposing their personal assets to business risks.',
         
-        'super-shortfall': 'It\'s best to review all calculations first to confirm the exact shortfall amount and ensure no other errors exist. After confirming the shortfall, the business should make the additional payment to meet its legal obligations.',
+        'super-shortfall': 'It\'s best to review all calculations first to confirm the exact shortfall amount of $450 and ensure no other errors exist. After confirming the shortfall, the business should make the additional payment to meet its legal obligations.',
         'super-prevention': 'Implementing a payroll system that automatically calculates superannuation based on current rates is the most reliable way to prevent future errors. This removes the potential for human calculation errors.',
         'tractor-insurance': 'The property insurance should be updated before the tractor is delivered to ensure it\'s covered from the moment it arrives on the property. Waiting until after delivery would leave the expensive asset uninsured during transport and initial use.',
         'purchase-documentation': 'A tractor valued at $45,000 is a capital asset, not a regular expense. It should be recorded on the balance sheet and depreciated over its useful life (typically 5-10 years) according to tax regulations.',
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Navigation and Progress
-    const sections = ['introduction', 'document-review', 'january', 'february', 'march', 'april', 'may', 'june', 'summary'];
+    const sections = ['student-info', 'introduction', 'document-review', 'january', 'february', 'march', 'april', 'may', 'june', 'summary'];
     let currentSectionIndex = 0;
     
     function updateProgressBar() {
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Start button click handler
     document.getElementById('start-simulation').addEventListener('click', function() {
-        navigateToSection(1); // Navigate to document review
+        navigateToSection(2); // Navigate to document review
     });
     
     // Document Tab Navigation (generic function for all tab sections)
@@ -603,31 +603,31 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Continue buttons for each section
     document.getElementById('document-review-continue').addEventListener('click', function() {
-        navigateToSection(2); // Navigate to January
+        navigateToSection(3); // Navigate to January
     });
     
     document.getElementById('january-continue').addEventListener('click', function() {
-        navigateToSection(3); // Navigate to February
+        navigateToSection(4); // Navigate to February
     });
     
     document.getElementById('february-continue').addEventListener('click', function() {
-        navigateToSection(4); // Navigate to March
+        navigateToSection(5); // Navigate to March
     });
     
     document.getElementById('march-continue').addEventListener('click', function() {
-        navigateToSection(5); // Navigate to April
+        navigateToSection(6); // Navigate to April
     });
     
     document.getElementById('april-continue').addEventListener('click', function() {
-        navigateToSection(6); // Navigate to May
+        navigateToSection(7); // Navigate to May
     });
     
     document.getElementById('may-continue').addEventListener('click', function() {
-        navigateToSection(7); // Navigate to June
+        navigateToSection(8); // Navigate to June
     });
     
     document.getElementById('june-continue').addEventListener('click', function() {
-        navigateToSection(8); // Navigate to Summary
+        navigateToSection(9); // Navigate to Summary
     });
     
     // Generate Summary
@@ -779,78 +779,6 @@ document.addEventListener('DOMContentLoaded', function() {
             scoreMessage.textContent = 'You need to improve your understanding of legal and insurance compliance requirements for agricultural businesses.';
         }
     }
-    
-    // Restart Simulation Button
-    document.getElementById('restart-simulation').addEventListener('click', function() {
-        // Confirm restart
-        if (!confirm('Are you sure you want to restart the simulation? All your progress will be lost.')) {
-            return;
-        }
-        
-        // Reset user answers
-        for (const section in userAnswers) {
-            userAnswers[section] = {};
-        }
-        
-        // Reset section scores
-        for (const section in sectionScores) {
-            sectionScores[section] = 0;
-        }
-        
-        // Reset running totals
-        totalCorrect = 0;
-        totalQuestions = 0;
-        
-        // Reset sections submitted
-        for (const section in sectionsSubmitted) {
-            sectionsSubmitted[section] = false;
-        }
-        
-        // Reset all radio buttons
-        document.querySelectorAll('input[type="radio"]').forEach(radio => {
-            radio.checked = false;
-            radio.disabled = false;
-        });
-        
-        // Reset all checkboxes
-        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-            checkbox.checked = false;
-            checkbox.disabled = false;
-        });
-        
-        // Reset all feedback elements
-        document.querySelectorAll('.feedback').forEach(feedback => {
-            feedback.textContent = '';
-            feedback.className = 'feedback';
-        });
-        
-        // Remove all score elements
-        document.querySelectorAll('.section-score').forEach(scoreElement => {
-            scoreElement.remove();
-        });
-        
-        // Remove section scores summary if it exists
-        const sectionScoresSummary = document.querySelector('.section-scores-summary');
-        if (sectionScoresSummary) {
-            sectionScoresSummary.remove();
-        }
-        
-        // Reset continue buttons and submit buttons
-        document.querySelectorAll('.primary-button').forEach(button => {
-            if (button.id !== 'start-simulation' && button.id !== 'restart-simulation') {
-                button.disabled = true;
-            }
-        });
-        
-        document.querySelectorAll('.secondary-button').forEach(button => {
-            if (button.id.startsWith('submit-')) {
-                button.disabled = true;
-            }
-        });
-        
-        // Navigate back to introduction
-        navigateToSection(0);
-    });
     
     // Allow progress steps to be clicked for navigation (for testing/review purposes)
     document.querySelectorAll('.step').forEach((step, index) => {
