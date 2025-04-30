@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
         'wage-percentage': '28.6%',
         'super-compliance': 'no',
         'award-rates': 'yes',
-        'license-attention': 'food',
+        'licence-attention': 'food',
         'business-structure': 'yes',
         
         // January
-        'water-license': 'renew-now',
+        'water-licence': 'renew-now',
         'food-cert': 'renew',
         'insurance-issue': 'workers-comp',
         'workers-comp-action': 'renew',
@@ -81,10 +81,10 @@ document.addEventListener('DOMContentLoaded', function() {
         'wage-percentage': 'To calculate the percentage of revenue spent on wages, divide the wages ($30,000) by the total revenue ($105,000), then multiply by 100. This gives 28.6% (30,000 ÷ 105,000 × 100 = 28.6%).',
         'super-compliance': 'The superannuation contribution should be 11.5% of wages. For $30,000 in wages, the correct contribution is $3,450 (30,000 × 0.115 = 3,450). The actual contribution was only $3,000, which is $450 short.',
         'award-rates': 'All employees are being paid at or above the minimum award rates for their positions as shown in the employee records. Each employee\'s pay rate meets or exceeds the minimum rate for their award level.',
-        'license-attention': 'The Food Safety Certification expired in November 2023 (current date is January 2024), making it the most urgent license issue. The Water Usage License is expiring soon but hasn\'t expired yet.',
+        'licence-attention': 'The Food Safety Certification expired in November 2023 (current date is January 2024), making it the most urgent licence issue. The Water Usage Licence is expiring soon but hasn\'t expired yet.',
         'business-structure': 'There is a mismatch between the business structure (partnership) and the business name (which includes "Pty Ltd"). A "Pty Ltd" designation is only appropriate for a registered company, not a partnership.',
         
-        'water-license': 'The Water Usage License expires on January 14, 2024, which is very soon. Without this license, the farm cannot legally use water for irrigation, which would severely impact operations. Immediate renewal is necessary.',
+        'water-licence': 'The Water Usage Licence expires on January 14, 2024, which is very soon. Without this licence, the farm cannot legally use water for irrigation, which would severely impact operations. Immediate renewal is necessary.',
         'food-cert': 'The Food Safety Certification has already expired, and a major buyer is requesting current certification before placing an order. Renewing immediately is necessary to maintain business relationships and comply with regulations.',
         'insurance-issue': 'The Workers\' Compensation policy expired on December 31, 2023, and it\'s now January 2024. This creates immediate legal exposure as all employers must maintain current workers\' compensation insurance for their employees.',
         'workers-comp-action': 'The policy needs to be renewed immediately to maintain legal compliance and ensure all employees are covered in case of workplace injuries.',
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'preventive-measures': 'Even for minor incidents, it\'s best practice to review what happened, update procedures if needed, and provide training to prevent similar incidents in the future. This comprehensive approach helps create a safer workplace.',
         'gst-calculation': 'To calculate the net GST amount, subtract the GST paid on purchases ($3,000) from the GST collected on sales ($5,500). This gives $2,500 payable to the tax office (5,500 - 3,000 = 2,500).',
         'bas-deadline': 'For quarterly Business Activity Statements (BAS), the deadline is the 28th day of the month following the end of the quarter. For the January-March quarter, the deadline is April 28.',
-        'missing-insurance': 'As an agricultural business, XYZ Farms should have both crop insurance (to protect against crop failure due to weather, pests, etc.) and business interruption insurance (to cover ongoing expenses if operations are disrupted).',
+        'missing-insurance': 'As an agricultural business, Ristaway Ag Co should have both crop insurance (to protect against crop failure due to weather, pests, etc.) and business interruption insurance (to cover ongoing expenses if operations are disrupted).',
         'insurance-priority': 'Conducting a risk assessment is the best approach to determine which insurance is more critical based on the farm\'s specific risks, considering factors like crop types, weather patterns, and financial situation.',
         
         'pay-adjustment': 'Multiple employees need adjustments based on the updated award rates: David Wilson (now $25.80), Sarah Johnson (now $25.20), and Emma Garcia (now $30.13). Their current rates are below the new minimum rates for their positions.',
@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Calendar items (checkbox group)
-    const correctCalendarItems = ['tax', 'super', 'insurance', 'licenses', 'employee'];
-    const calendarItemExplanation = 'A comprehensive compliance calendar should include: tax lodgment deadlines (for BAS, income tax, etc.), superannuation payment due dates (quarterly), insurance policy renewal dates (to avoid coverage gaps), license and permit expiry dates (to maintain legal operation), and employee review dates (to ensure ongoing compliance with awards).';
+    const correctCalendarItems = ['tax', 'super', 'insurance', 'licences', 'employee'];
+    const calendarItemExplanation = 'A comprehensive compliance calendar should include: tax lodgment deadlines (for BAS, income tax, etc.), superannuation payment due dates (quarterly), insurance policy renewal dates (to avoid coverage gaps), licence and permit expiry dates (to maintain legal operation), and employee review dates (to ensure ongoing compliance with awards).';
     
     // Track sections that have been submitted
     const sectionsSubmitted = {
@@ -254,11 +254,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setupRadioHandler('wage-percentage', 'document-review');
         setupRadioHandler('super-compliance', 'document-review');
         setupRadioHandler('award-rates', 'document-review');
-        setupRadioHandler('license-attention', 'document-review');
+        setupRadioHandler('licence-attention', 'document-review');
         setupRadioHandler('business-structure', 'document-review');
         
         // January
-        setupRadioHandler('water-license', 'january');
+        setupRadioHandler('water-licence', 'january');
         setupRadioHandler('food-cert', 'january');
         setupRadioHandler('insurance-issue', 'january');
         setupRadioHandler('workers-comp-action', 'january');
@@ -340,8 +340,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if all questions in a section are answered
     function areAllQuestionsAnswered(section) {
         const requiredQuestions = {
-            'document-review': ['wage-percentage', 'super-compliance', 'award-rates', 'license-attention', 'business-structure'],
-            'january': ['water-license', 'food-cert', 'insurance-issue', 'workers-comp-action'],
+            'document-review': ['wage-percentage', 'super-compliance', 'award-rates', 'licence-attention', 'business-structure'],
+            'january': ['water-licence', 'food-cert', 'insurance-issue', 'workers-comp-action'],
             'february': ['new-employee-rate', 'new-employee-action', 'liability-renewal', 'structure-recommendation', 'structure-consequences'],
             'march': ['super-shortfall', 'super-prevention', 'tractor-insurance', 'purchase-documentation', 'chemical-inspection'],
             'april': ['incident-action', 'preventive-measures', 'gst-calculation', 'bas-deadline', 'missing-insurance', 'insurance-priority'],
@@ -377,8 +377,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function calculateSectionScore(section) {
         const sectionKey = section === 'document-review' ? 'documentReview' : section;
         const requiredQuestions = {
-            'document-review': ['wage-percentage', 'super-compliance', 'award-rates', 'license-attention', 'business-structure'],
-            'january': ['water-license', 'food-cert', 'insurance-issue', 'workers-comp-action'],
+            'document-review': ['wage-percentage', 'super-compliance', 'award-rates', 'licence-attention', 'business-structure'],
+            'january': ['water-licence', 'food-cert', 'insurance-issue', 'workers-comp-action'],
             'february': ['new-employee-rate', 'new-employee-action', 'liability-renewal', 'structure-recommendation', 'structure-consequences'],
             'march': ['super-shortfall', 'super-prevention', 'tractor-insurance', 'purchase-documentation', 'chemical-inspection'],
             'april': ['incident-action', 'preventive-measures', 'gst-calculation', 'bas-deadline', 'missing-insurance', 'insurance-priority'],
@@ -435,8 +435,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const sectionKey = section === 'document-review' ? 'documentReview' : section;
         const requiredQuestions = {
-            'document-review': ['wage-percentage', 'super-compliance', 'award-rates', 'license-attention', 'business-structure'],
-            'january': ['water-license', 'food-cert', 'insurance-issue', 'workers-comp-action'],
+            'document-review': ['wage-percentage', 'super-compliance', 'award-rates', 'licence-attention', 'business-structure'],
+            'january': ['water-licence', 'food-cert', 'insurance-issue', 'workers-comp-action'],
             'february': ['new-employee-rate', 'new-employee-action', 'liability-renewal', 'structure-recommendation', 'structure-consequences'],
             'march': ['super-shortfall', 'super-prevention', 'tractor-insurance', 'purchase-documentation', 'chemical-inspection'],
             'april': ['incident-action', 'preventive-measures', 'gst-calculation', 'bas-deadline', 'missing-insurance', 'insurance-priority'],
@@ -542,7 +542,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     feedbackElement.innerHTML = `
                         <p><strong>Incorrect.</strong> Your selection was not complete or included unnecessary items.</p>
-                        <p>The compliance calendar should include: tax lodgment deadlines, superannuation payment due dates, insurance policy renewal dates, license and permit expiry dates, and employee review dates.</p>
+                        <p>The compliance calendar should include: tax lodgment deadlines, superannuation payment due dates, insurance policy renewal dates, licence and permit expiry dates, and employee review dates.</p>
                         <p>${calendarItemExplanation}</p>
                     `;
                     feedbackElement.className = 'feedback error';
@@ -669,8 +669,8 @@ document.addEventListener('DOMContentLoaded', function() {
             userAnswers.june['structure-decision'] === correctAnswers['structure-decision'] ? 'success' : 'error');
         
         addSummaryItem(legalSummary, 
-            'License Renewals: Renewed Water Usage License and Food Safety Certification', 
-            userAnswers.january['water-license'] === correctAnswers['water-license'] && 
+            'Licence Renewals: Renewed Water Usage Licence and Food Safety Certification', 
+            userAnswers.january['water-licence'] === correctAnswers['water-licence'] && 
             userAnswers.january['food-cert'] === correctAnswers['food-cert'] ? 'success' : 'error');
         
         addSummaryItem(legalSummary, 

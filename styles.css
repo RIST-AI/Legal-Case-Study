@@ -718,3 +718,13 @@ tr:nth-child(even) {
     color: #1976d2;
     border: 1px solid #1976d2;
 }
+.document-subsection .document-line:first-child {
+    font-weight: 600;
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 8px;
+}
+
+.document-line.total {
+    margin-top: 12px;
+    border-top: 2px solid #333;
+}
